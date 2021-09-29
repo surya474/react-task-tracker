@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { withTheme } from '@rjsf/core';
 import { Theme as AntDTheme } from '@rjsf/antd';
-import { Form, Input, Button, Checkbox, Select, Modal } from 'antd';
+import { Form, Input, Button, Space, Checkbox, Select, Modal } from 'antd';
 
 const TaskForm = withTheme(AntDTheme);
 const { Option } = Select;
@@ -91,6 +91,7 @@ const CreateTask = ({ taskMode, taskData, addTask, setShowModal }) => {
       visible={isModalVisible}
       onOk={handleOk}
       onCancel={handleCancel}
+      footer={null}
     >
       <TaskForm
         schema={schema}
@@ -98,9 +99,14 @@ const CreateTask = ({ taskMode, taskData, addTask, setShowModal }) => {
         formData={formData}
         onSubmit={onSubmit}
       >
-        <Button htmlType="submit" type="primary">
-          {taskMode.toUpperCase()}
-        </Button>
+        <Space>
+          <Button htmlType="submit" type="primary">
+            {taskMode.toUpperCase()}
+          </Button>
+          <Button onClick={handleCancel} type="danger">
+            CANCEL
+          </Button>
+        </Space>
       </TaskForm>
     </Modal>
   );

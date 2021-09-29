@@ -54,7 +54,7 @@ const TaskHome = () => {
     <>
       <div className="createTask">
         <Button type="primary" icon={<PlusOutlined />} onClick={createtask}>
-          Create task
+          Create Task
         </Button>
       </div>
       {showModal ? (
