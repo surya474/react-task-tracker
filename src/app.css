@@ -1,0 +1,15 @@
+@import '~antd/dist/antd.css';
+
+.header {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.createTask {
+  padding: 20px;
+}
+
+.taskList {
+  padding: 20px;
+}
